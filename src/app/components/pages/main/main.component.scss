@@ -1,0 +1,52 @@
+.slider__item {
+    height: 640px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-left: 120px;
+}
+
+.slide-bg-1 {
+    background-image: url("/assets/images/slider_image_1.png");
+}
+
+.ui-accordion-header-icon.iconOpen {
+    transform: rotate(90deg);
+}
+
+.ui-icon {
+    background-image: unset !important;
+}
+
+.ui-accordion-header-icon {
+    content: url("/assets/images/chevron-right-solid.svg");
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+    transition: transform .5s;
+}
+
+.ui-accordion-header-icon.iconOpen {
+    transform: rotate(90deg);
+}
+
+.ui-widget-content {
+    border: none;
+    background: transparent;
+}
+
+.ui-icon {
+    margin-top: 0;
+}
+
+.ui-accordion-header,
+.accordion-header-active {
+    border-radius: 10px;
+    background: linear-gradient(0deg, #076BFF 0%, #007BFF 100%);
+    border: none;
+    color: #fff;
+}
+
+.ui-accordion .ui-accordion-content {
+    padding: 1em;
+}

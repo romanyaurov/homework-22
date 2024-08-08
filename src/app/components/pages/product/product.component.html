@@ -1,0 +1,13 @@
+<div class="row">
+    <h2 class="text-center mb-5">{{ product.title }}</h2>
+    <div class="row mb-5">
+        <div class="col-6 d-flex align-items-center">
+            <img src="{{ product.image }}" class="img-fluid" alt="Tea Package Image">
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-around flex-column">
+            <div>{{ product.description }}</div>
+            <div class="text-center w-100 fs-3">А цена всего {{ product.price }} р.</div>
+            <a [routerLink]="['/order']" class="btn btn-lg btn-primary w-100" (click)="selectProduct()">Купить</a>
+        </div>
+    </div>
+</div>

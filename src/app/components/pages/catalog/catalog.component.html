@@ -1,0 +1,22 @@
+<section class="products">
+    <h2 class="text-center mb-5">{{ pageTitle }}</h2>
+    <div class="row row-cols-xl-3 row-cols-md-2 row-cols-1 mb-5">
+        <product-card class="col" *ngFor="let product of productsList" [product]="product"></product-card>
+    </div>
+    <div class="loader" *ngIf="isLoaderActive">
+        <div class="lds-spinner">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</section>

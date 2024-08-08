@@ -1,0 +1,67 @@
+<section class="order-form">
+    <h2 class="text-center mb-5" id="form-title" *ngIf="!successOrder">Сделать заказ</h2>
+    <div class="row justify-content-center mb-5" id="form_block" *ngIf="!successOrder">
+        <div class="col col-lg-8 col-xl-6">
+            <form class="row g-3" id="orderForm" [formGroup]="orderForm">
+                <div class="col-md-12">
+                    <label for="productTitle" class="form-label">Наименование товара</label>
+                    <input type="text" class="form-control" id="productTitle" formControlName="product"
+                    [attr.disabled]="true">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                    [ngClass]="{'is-invalid': name?.invalid && (name?.dirty || name?.touched)}"
+                    onlyLettersInput>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="surname" class="form-label">Фамилия</label>
+                    <input type="text" class="form-control" id="surname" formControlName="last_name"
+                    [ngClass]="{'is-invalid': last_name?.invalid && (last_name?.dirty || last_name?.touched)}"
+                    onlyLettersInput>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="phone" class="form-label">Телефон</label>
+                    <input type="number" class="form-control" id="phone" formControlName="phone"
+                    [ngClass]="{'is-invalid': phone?.invalid && (phone?.dirty || phone?.touched)}">
+                </div>
+                <div class="col-12 col-md-6">
+                    <label for="country" class="form-label">Страна</label>
+                    <input type="text" class="form-control" id="country" formControlName="country"
+                    [ngClass]="{'is-invalid': country?.invalid && (country?.dirty || country?.touched)}">
+                </div>
+                <div class="col-md-6">
+                    <label for="zip" class="form-label">Индекс</label>
+                    <input type="number" class="form-control" id="zip" formControlName="zip"
+                    [ngClass]="{'is-invalid': zip?.invalid && (zip?.dirty || zip?.touched)}"
+                    inputLengthLimiter="5">
+                </div>
+                <div class="col-md-12">
+                    <label for="address" class="form-label">Адрес</label>
+                    <input type="text" class="form-control" id="address" formControlName="address"
+                    [ngClass]="{'is-invalid': address?.invalid && (address?.dirty || address?.touched)}">
+                </div>
+                <div class="col-md-12">
+                    <label for="comment" class="form-label">Комментарий к заказу</label>
+                    <input type="text" class="form-control" id="comment" formControlName="comment">
+                </div>
+                <div class="col-12 col-md-4 d-grid">
+                    <button type="button" class="btn btn-primary hvr-sink" id="formSubmit" (click)="processOrder()"
+                    [disabled]="!orderForm.valid">
+                        Отправить
+                    </button>
+                </div>
+                <div class="col-md-8" style="color: red;" *ngIf="responseError">Произошла ошибка. Попробуйте еще раз.</div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mb-5 d-flex flex-column justify-content-around align-iems-center" *ngIf="successOrder" style="height: 554px;">
+        <span class="fs-2 d-block">
+            Спасибо за заказ!
+        </span>
+        <span class="fs-3 d-block">
+            Мы свяжемся с вами в ближайшее время!
+        </span>
+    </div>
+</section>
