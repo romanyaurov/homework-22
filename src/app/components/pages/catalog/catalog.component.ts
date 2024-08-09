@@ -28,6 +28,7 @@ export class CatalogComponent implements OnInit, OnDestroy {
     let url: string = 'https://testologia.ru/tea';
     if (this.productsService.searchingString) {
       url += `?search=${this.productsService.searchingString}`;
+      this.pageTitle = `Результаты поиска по запросу "${this.productsService.searchingString}"`;
     }
     this.getProductsSubscription = this.http.get<ProductType[]>(url)
       .pipe(
@@ -38,7 +39,6 @@ export class CatalogComponent implements OnInit, OnDestroy {
           if (data && data.length > 0) {
             this.productsList = data;
             this.productsService.productsList = data;
-            this.pageTitle = `Результаты поиска по запросу "${this.productsService.searchingString}"`;
           } else {
             this.pageTitle = `По запросу "${this.productsService.searchingString}" ничего не найдено`;
           }
