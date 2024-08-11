@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription, tap } from 'rxjs';
-import { ProductsService } from 'src/app/services/products.service';
-import { ProductType } from 'src/app/types/product.type';
+import { ProductsService } from 'src/app/shared/services/products.service';
+import { ProductType } from 'src/types/product.type';
 
 @Component({
   selector: 'catalog',

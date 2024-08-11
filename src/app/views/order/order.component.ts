@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription, tap } from 'rxjs';
-import { ProductsService } from 'src/app/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'order',
@@ -49,7 +50,8 @@ export class OrderComponent implements OnInit, OnDestroy {
   constructor(
     private productService: ProductsService,
     private fb: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   get name() { return this.orderForm.get('name') }
@@ -60,6 +62,10 @@ export class OrderComponent implements OnInit, OnDestroy {
   get address() { return this.orderForm.get('address') }
 
   ngOnInit(): void {
+    if (!this.productService.selectedProductTitle) {
+      alert('Выберите товар из каталога');
+      this.router.navigate(['/products']);
+    }
     this.orderForm.patchValue({ product: this.productService.selectedProductTitle });
   }
 

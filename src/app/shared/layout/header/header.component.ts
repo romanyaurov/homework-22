@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProductsService } from 'src/app/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 
 @Component({
   selector: 'header',
@@ -22,7 +22,7 @@ export class HeaderComponent {
   }
 
   protected clearSearchInput() {
-    if (window.location.href.includes('/catalog')) {
+    if (window.location.href.includes('/products')) {
       this.navToCatalog();
     }
     this.searchInput = '';
@@ -31,7 +31,7 @@ export class HeaderComponent {
 
   private navToCatalog() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () { return false };
-    this.router.navigate(['/catalog']);
+    this.router.navigate(['/products']);
   }
 
 }

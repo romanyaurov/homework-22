@@ -1,0 +1,7 @@
+<ngb-accordion [closeOthers]="true" activeIds="static-1">
+	<ngb-panel *ngFor="let item of accordionItems" id="static-{{ item.id.toString() }}" title="{{ item.title }}">
+		<ng-template ngbPanelContent>
+			{{ item.description }}
+		</ng-template>
+	</ngb-panel>
+</ngb-accordion>

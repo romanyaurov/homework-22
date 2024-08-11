@@ -1,0 +1,20 @@
+<section class="slider mb-5">
+    <div class="slider__item slide-bg-1 d-flex align-items-center">
+        <div class="slider__item-content w-100 d-grid gap-5">
+            <h2 class="fs-1 fw-bold">Большой выбор травянного чая</h2>
+            <p>Узай все подробности, перейдя в наш каталог</p>
+            <a [routerLink]="'/products'" class="btn btn-primary col-4 col-lg-2">Каталог</a>
+        </div>
+    </div>
+</section>
+
+<section class="faq mb-5">
+    <h2 class="text-center mb-5">Ответы на часто задаваемые вопросы</h2>
+    <div class="row justify-content-center">
+        <div class="col col-lg-10 col-xl-8">
+            <app-accordion class="mb-5"></app-accordion>
+        </div>
+    </div>
+</section>
+
+<app-popup></app-popup>

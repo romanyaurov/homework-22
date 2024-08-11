@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ProductsService } from 'src/app/services/products.service';
-import { ProductType } from 'src/app/types/product.type';
+import { ProductsService } from 'src/app/shared/services/products.service';
+import { ProductType } from 'src/types/product.type';
 
 @Component({
   selector: 'product',
@@ -30,7 +30,7 @@ export class ProductComponent implements OnInit, OnDestroy {
           this.product = product;
         } else {
           alert(`Продукт с ID ${params['id']} не найден.`);
-          this.router.navigate(['/catalog']);
+          this.router.navigate(['/products']);
         }
       } else {
         alert('Что-то пошло не так.');

@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { ProductType } from '../types/product.type';
+import { ProductType } from 'src/types/product.type';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductsService {
 
   private _productsList: ProductType[] = [] as ProductType[];

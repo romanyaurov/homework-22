@@ -1,0 +1,18 @@
+<ng-template #popup>
+    <div class="modal-header">
+        <h4 class="modal-title">Индивидуальное предложение</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+    </div>
+    <div class="modal-body text-center">
+        <p>
+            Скорее переходите в наш каталог, выбирайте понравившийся товар, оформляйте заказ и получите гарантированную
+            скидку 90%. Предложение ограничено!
+        </p>
+        <p class="fw-bold">
+            Предложение заканчивается через:<br>{{ discountRemainigTime }}
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-primary w-100" [routerLink]="'/products'" (click)="close()">Перейти в каталог</a>
+    </div>
+</ng-template>
